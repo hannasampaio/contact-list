@@ -7,10 +7,10 @@ const ContactSideBar = () => (
     <div>
       <S.Campo type="text" placeholder="Contato" />
       <S.Filtros>
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard />
-        <FiltroCard ativo />
+        <FiltroCard legenda="Família" contador={1} />
+        <FiltroCard legenda="Amigos" contador={2} />
+        <FiltroCard legenda="Trabalho" contador={3} />
+        <FiltroCard legenda="Gerais" contador={4} ativo />
       </S.Filtros>
     </div>
   </S.Aside>
