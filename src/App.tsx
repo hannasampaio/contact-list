@@ -1,8 +1,16 @@
+import ContactList from './Containers/ContactList'
+import ContactSideBar from './Containers/ContactSidebar'
+import EstiloGlobal, { Container } from './styles'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Olá Hanna</h1>
-    </div>
+    <>
+      <EstiloGlobal />
+      <Container>
+        <ContactSideBar />
+        <ContactList />
+      </Container>
+    </>
   )
 }
 
