@@ -1,19 +1,49 @@
+import { useDispatch, useSelector } from 'react-redux'
 import FiltroCard from '../../Components/FiltroCard'
+import { RootReducer } from '../../store'
+import { alteraTermo } from '../../store/reducers/filtro'
 
 import * as S from './styles'
+import * as enums from '../../utils/enums/contato'
 
-const ContactSideBar = () => (
-  <S.Aside>
-    <div>
-      <S.Campo type="text" placeholder="Contato" />
-      <S.Filtros>
-        <FiltroCard legenda="Família" contador={1} />
-        <FiltroCard legenda="Amigos" contador={2} />
-        <FiltroCard legenda="Trabalho" contador={3} />
-        <FiltroCard legenda="Gerais" contador={4} ativo />
-      </S.Filtros>
-    </div>
-  </S.Aside>
-)
+const ContactSideBar = () => {
+  const dispatch = useDispatch()
+  const { termo } = useSelector((state: RootReducer) => state.filtro)
+
+  return (
+    <S.Aside>
+      <div>
+        <S.Campo
+          type="text"
+          placeholder=" Buscar Contato"
+          value={termo}
+          onChange={(evento) => dispatch(alteraTermo(evento.target.value))}
+        />
+        <S.Filtros>
+          <FiltroCard
+            valor={enums.Categoria.FAMILIA}
+            criterio="familia"
+            legenda="família"
+          />
+          <FiltroCard
+            valor={enums.Categoria.AMIGOS}
+            criterio="amigos"
+            legenda="amigos"
+          />
+          <FiltroCard
+            valor={enums.Categoria.TRABALHO}
+            criterio="trabalho"
+            legenda="trabalho"
+          />
+          <FiltroCard
+            valor={enums.Categoria.TODOS}
+            criterio="todos"
+            legenda="todos"
+          />
+        </S.Filtros>
+      </div>
+    </S.Aside>
+  )
+}
 
 export default ContactSideBar
