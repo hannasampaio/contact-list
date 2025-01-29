@@ -5,6 +5,8 @@ import { alteraTermo } from '../../store/reducers/filtro'
 
 import * as S from './styles'
 import * as enums from '../../utils/enums/contato'
+import { Campo } from '../../styles'
+import AdicionarContato from '../../Components/AdicionarContato'
 
 const ContactSideBar = () => {
   const dispatch = useDispatch()
@@ -12,8 +14,9 @@ const ContactSideBar = () => {
 
   return (
     <S.Aside>
+      <AdicionarContato />
       <div>
-        <S.Campo
+        <Campo
           type="text"
           placeholder=" Buscar Contato"
           value={termo}
