@@ -1,5 +1,5 @@
 export enum Categoria {
-  FAMILIA = 'Familia',
+  FAMILIA = 'Família',
   AMIGOS = 'Amigos',
   TRABALHO = 'Trabalho',
   TODOS = 'Todos'

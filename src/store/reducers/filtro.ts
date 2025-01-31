@@ -3,13 +3,13 @@ import * as enums from '../../utils/enums/contato'
 
 type FiltroSate = {
   termo?: string
-  criterio: 'familia' | 'amigos' | 'trabalho' | 'todos'
+  criterio: 'Família' | 'Amigos' | 'Trabalho' | 'Todos'
   valor?: enums.Categoria
 }
 
 const initialState: FiltroSate = {
   termo: '',
-  criterio: 'todos'
+  criterio: 'Todos'
 }
 
 const filtroSlice = createSlice({

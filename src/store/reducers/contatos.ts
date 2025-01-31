@@ -12,7 +12,7 @@ const initialState: ContatosState = {
       id: 1,
       categoria: enums.Categoria.FAMILIA,
       nome: 'Júlia Sampaio',
-      telefone: '999999999',
+      telefone: '77777777',
       email: 'julia@gmail.com'
     },
     {
@@ -26,7 +26,7 @@ const initialState: ContatosState = {
       id: 3,
       categoria: enums.Categoria.TRABALHO,
       nome: 'Ana Sousa',
-      telefone: '999999999',
+      telefone: '888888888',
       email: 'ana@gmail.com'
     }
   ]

@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variaveis'
-import { Botao } from '../Components/ContactCard/styles'
 
 const EstiloGlobal = createGlobalStyle`
   * {
@@ -33,13 +32,27 @@ export const Titulo = styled.h2`
 
 export const Campo = styled.input`
   padding: 16px;
-  background-color: #fff;
+  background-color: ${variaveis.branco};
   border-radius: 8px;
   font-weight: bold;
   color: #aaaaa;
-  border-color: #666666;
+  border-color: ${variaveis.cinzaMuitoClaro};
   width: 100%;
 `
+
+export const Botao = styled.button`
+  font-size: 12px;
+  font-weight: bold;
+  color: ${variaveis.branco};
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: ${variaveis.azulEscuro};
+  border-radius: 8px;
+  margin-right: 8px;
+  margin-top: 8px;
+`
+
 export const BotaoSalvar = styled(Botao)`
   background-color: ${variaveis.azulEscuro};
 `

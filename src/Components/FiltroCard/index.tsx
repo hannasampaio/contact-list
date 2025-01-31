@@ -6,14 +6,14 @@ import * as enums from '../../utils/enums/contato'
 
 export type Props = {
   legenda: string
-  criterio: 'familia' | 'amigos' | 'trabalho' | 'todos'
+  criterio: 'Família' | 'Amigos' | 'Trabalho' | 'Todos'
   valor?: enums.Categoria
+  icone?: React.ReactNode
 }
 
-const FiltroCard = ({ legenda, criterio, valor }: Props) => {
+const FiltroCard = ({ legenda, criterio, valor, icone }: Props) => {
   const dispatch = useDispatch()
 
-  // Acessa o estado de contatos e filtro usando useSelector
   const { itens } = useSelector((state: RootReducer) => state.contatos)
   const { filtro } = useSelector((state: RootReducer) => state)
 
@@ -25,7 +25,7 @@ const FiltroCard = ({ legenda, criterio, valor }: Props) => {
   }
 
   const contarContatos = () => {
-    if (criterio === 'todos') return itens.length
+    if (criterio === 'Todos') return itens.length
 
     if (valor === enums.Categoria.FAMILIA) {
       return itens.filter((item) => item.categoria === enums.Categoria.FAMILIA)
@@ -53,6 +53,7 @@ const FiltroCard = ({ legenda, criterio, valor }: Props) => {
 
   return (
     <S.Card ativo={ativo} onClick={filtrar}>
+      {icone && <S.IconWrapper>{icone}</S.IconWrapper>}
       <S.Contador>{contador}</S.Contador>
       <S.Label>{legenda}</S.Label>
     </S.Card>

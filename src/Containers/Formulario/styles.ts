@@ -1,15 +1,16 @@
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
 
 export const Form = styled.form`
   max-width: 547px;
   width: 100%;
   font-weight: bold;
   font-size: 14px;
-  color: #666666;
+  color: ${variaveis.azulEscuro};
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #fff;
+  background: ${variaveis.branco};
   padding: 24px;
   border-radius: 8px;
 `
@@ -23,7 +24,7 @@ export const Campo = styled.input`
   transition: border-color 0.3s ease-in-out;
 
   &:focus {
-    border-color: #007bff;
+    border-color: ${variaveis.azulClaro};
     outline: none;
   }
 `
@@ -31,7 +32,7 @@ export const Campo = styled.input`
 export const Opcoes = styled.div`
   display: flex;
   margin-bottom: 10px;
-  gap: 16px;
+  gap: 8px;
 
   label {
     display: flex;
@@ -43,8 +44,11 @@ export const Opcoes = styled.div`
 `
 
 export const Opcao = styled.div`
-  display: inline;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   text-transform: capitalize;
+  margin-right: 10px;
 
   }
 `

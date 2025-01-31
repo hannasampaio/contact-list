@@ -6,6 +6,10 @@ import * as S from './styles'
 import { remover, editar } from '../../store/reducers/contatos'
 import Contato from '../../models/Contato'
 import { BotaoSalvar } from './styles'
+import { Botao } from '../../styles'
+
+import { FaPhone } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 type Props = Contato
 
@@ -42,7 +46,11 @@ const ContactCard = ({
   return (
     <S.Card>
       <S.Tag categoria={categoria}> {categoria}</S.Tag>
-      <S.Nome> {nome}</S.Nome>
+      <S.Nome>
+        {estaEditando && <em>Editando:</em>}
+        {nome}
+      </S.Nome>
+      <MdEmail size={16} />
       <S.Email
         disabled={!estaEditando}
         value={email}
@@ -50,6 +58,7 @@ const ContactCard = ({
       >
         {email}
       </S.Email>
+      <FaPhone size={16} />
       <S.Telefone
         disabled={!estaEditando}
         value={telefone}
@@ -82,7 +91,7 @@ const ContactCard = ({
           </>
         ) : (
           <>
-            <S.Botao onClick={() => setEstaEditando(true)}>Editar</S.Botao>
+            <Botao onClick={() => setEstaEditando(true)}>Editar</Botao>
             <S.BotaoCancelarRemover onClick={() => dispatch(remover(id))}>
               Remover
             </S.BotaoCancelarRemover>

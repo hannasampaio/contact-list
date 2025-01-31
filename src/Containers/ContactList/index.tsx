@@ -16,15 +16,15 @@ const ContactList = () => {
       contatosFiltrados = contatosFiltrados.filter(
         (contato) => contato.nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
-      if (criterio === 'familia') {
+      if (criterio === 'Família') {
         contatosFiltrados = contatosFiltrados.filter(
           (contato) => contato.categoria === valor
         )
-      } else if (criterio === 'amigos') {
+      } else if (criterio === 'Amigos') {
         contatosFiltrados = contatosFiltrados.filter(
           (contato) => contato.categoria === valor
         )
-      } else if (criterio === 'trabalho') {
+      } else if (criterio === 'Trabalho') {
         contatosFiltrados = contatosFiltrados.filter(
           (contato) => contato.categoria === valor
         )
@@ -40,10 +40,10 @@ const ContactList = () => {
     const complementacao =
       termo !== undefined && termo.length > 0 ? `e "${termo}"` : ''
 
-    if (criterio === 'todos') {
-      mensagem = `${quantidade} Contato(s) encontrado(s) como: todos ${complementacao}`
+    if (criterio === 'Todos') {
+      mensagem = `${quantidade} Contato(s) encontrado(s) como: Todos ${complementacao}`
     } else {
-      mensagem = `${quantidade} Contato(s) encontrado(s) como: "${`${criterio}`}" ${complementacao}`
+      mensagem = `${quantidade} Contato(s) encontrado(s) como: ${`${criterio}`} ${complementacao}`
     }
 
     return mensagem
